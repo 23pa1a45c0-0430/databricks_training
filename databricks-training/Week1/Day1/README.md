@@ -1,160 +1,166 @@
-1. Week1/Day1/README.md
-# Week 1 - Day 1
+# SQL Practice Queries (1–20)
 
-## Topics Covered
+## Overview
 
-- Introduction to Databricks
-- Introduction to SQL
-- Database Concepts
-- DDL Commands
-- DML Commands
-- Creating Databases and Tables
-- Inserting Data
+This document contains solutions for the first 20 SQL practice queries based on the Employee, Department, and Project tables.
+
+The queries cover:
 - Basic SQL Queries
+- String Matching Queries
+- Date Queries
+- Aggregate Functions
 
 ---
 
-## Objective
+# Schema Used
 
-The objective of Day 1 was to understand the fundamentals of SQL and database operations using Databricks.
+## Employee Table
+
+| Column Name   | Data Type |
+|---------------|-----------|
+| emp_id        | INT |
+| name          | STRING |
+| age           | INT |
+| salary        | INT |
+| department_id | INT |
+| hire_date     | DATE |
 
 ---
 
-## Files Included
+## Department Table
 
-### SQL Folder
+| Column Name   | Data Type |
+|---------------|-----------|
+| department_id | INT |
+| name          | STRING |
+
+---
+
+## Project Table
+
+| Column Name   | Data Type |
+|---------------|-----------|
+| project_id    | INT |
+| name          | STRING |
+| department_id | INT |
+
+---
+
+# Topics Covered
+
+## 1. Basic Queries
+Practiced:
+- SELECT *
+- Selecting specific columns
+- Filtering records using WHERE clause
+
+---
+
+## 2. String Matching Queries
+Practiced:
+- LIKE operator
+- Wildcards (% and _)
+- Pattern matching
+
+Examples:
+- Names starting with specific letters
+- Names ending with specific letters
+- Character position matching
+
+---
+
+## 3. Date Queries
+Practiced:
+- YEAR()
+- MONTH()
+- Date filtering
+- Comparing dates
+
+Examples:
+- Employees hired in specific years
+- Employees hired before or after a date
+
+---
+
+## 4. Aggregate Queries
+Practiced:
+- SUM()
+- AVG()
+- MIN()
+- COUNT()
+
+Examples:
+- Total salary
+- Average salary
+- Employee count by department
+
+---
+
+# Files Included
+
+## SQL File
+
 Contains:
-- Database creation scripts
-- Table creation scripts
-- Insert queries
-- Basic SQL query practice
+- Solutions for queries 1–20
 
-### Notes Folder
+File:
+```txt
+solutions_1_to_20.sql
+```
+
+---
+
+## Output File
+
 Contains:
-- SQL concepts
-- Command explanations
-- Learning notes
+- Query outputs
+- Expected results
 
-### Outputs Folder
-Contains:
-- Query execution screenshots
-- Output images
-
----
-
-## Commands Practiced
-
-### DDL Commands
-- CREATE
-- ALTER
-- DROP
-- TRUNCATE
-
-### DML Commands
-- INSERT
-- UPDATE
-- DELETE
-
-### DQL Commands
-- SELECT
+File:
+```txt
+solutions_output.md
+```
 
 ---
 
-## Learning Outcome
+# SQL Concepts Practiced
 
-By the end of Day 1:
-- Understood SQL basics
-- Learned how databases work
-- Created tables
-- Inserted records
-- Executed basic SQL queries
-- Practiced filtering and sorting data
+| Concept | Description |
+|----------|-------------|
+| SELECT | Retrieve data |
+| WHERE | Filter rows |
+| LIKE | Pattern matching |
+| ORDER BY | Sorting |
+| GROUP BY | Grouping data |
+| Aggregate Functions | Calculations on rows |
 
 ---
 
-## Tools Used
+# Learning Outcomes
 
-- Databricks
-- SQL
+By completing these queries, I learned:
+
+- Writing basic SQL queries
+- Filtering data using conditions
+- Using pattern matching
+- Working with date functions
+- Performing aggregate calculations
+- Grouping records using GROUP BY
+
+---
+
+# Tools Used
+
+- Databricks SQL
+- MySQL / SQL Environment
 - GitHub
 
 ---
 
-## Author
 
-Mohith Daggupati
-2. sql/create_database.sql
-CREATE DATABASE training_db;
 
-USE training_db;
-3. sql/create_tables.sql
-CREATE TABLE students (
-    student_id INT,
-    student_name STRING,
-    department STRING,
-    age INT,
-    marks INT
-);
+---
 
-CREATE TABLE employees (
-    emp_id INT,
-    emp_name STRING,
-    department STRING,
-    salary INT
-);
-4. sql/insert_data.sql
-INSERT INTO students VALUES
-(1, 'Rahul', 'CSE', 20, 85),
-(2, 'Anjali', 'ECE', 21, 90),
-(3, 'Kiran', 'EEE', 22, 78),
-(4, 'Sneha', 'CSE', 20, 88),
-(5, 'Vikram', 'MECH', 23, 72);
+# Author
 
-INSERT INTO employees VALUES
-(101, 'Ramesh', 'HR', 45000),
-(102, 'Suresh', 'IT', 60000),
-(103, 'Kavya', 'Finance', 55000),
-(104, 'Priya', 'IT', 70000),
-(105, 'Arjun', 'Sales', 50000);
-5. sql/basic_queries.sql
--- Display all students
-SELECT * FROM students;
-
--- Display all employees
-SELECT * FROM employees;
-
--- Students with marks greater than 80
-SELECT * 
-FROM students
-WHERE marks > 80;
-
--- Employees with salary greater than 55000
-SELECT * 
-FROM employees
-WHERE salary > 55000;
-
--- Sort students by marks
-SELECT *
-FROM students
-ORDER BY marks DESC;
-
--- Sort employees by salary
-SELECT *
-FROM employees
-ORDER BY salary DESC;
-
--- Display only names and departments
-SELECT student_name, department
-FROM students;
-
--- Count total students
-SELECT COUNT(*) AS total_students
-FROM students;
-
--- Average marks
-SELECT AVG(marks) AS average_marks
-FROM students;
-
--- Maximum salary
-SELECT MAX(salary) AS highest_salary
-FROM employees;
+varshini
